@@ -2,34 +2,52 @@ package tda;
 
 public class ColaDinamica<T> implements Cola<T> {
 
+	private Nodo<T> primero;
+	private Nodo<T> ultimo;
+
 	@Override
 	public void offer(T dato) {
-		// TODO Auto-generated method stub
-		
+		Nodo<T> nuevo = new Nodo<>(dato, null);
+		if(primero == null)
+			primero = nuevo;
+		else
+			ultimo.setSiguiente(nuevo);
+			
+		ultimo = nuevo;
 	}
 
 	@Override
 	public T poll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if(primero == null)
+			return null;
+		
+		Nodo<T> aux = primero;
+		primero = primero.getSiguiente();
+		return aux.getElemento();
 	}
 
 	@Override
 	public T peek() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if(primero == null)
+			return null;
+		
+		return primero.getElemento();	
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return primero == null;
 	}
 
 	@Override
 	public void empty() {
-		// TODO Auto-generated method stub
-		
+
+		while(primero != null)
+			primero = primero.getSiguiente();
+		ultimo = null;
 	}
 
 }

@@ -2,52 +2,34 @@ package tda;
 
 public class ColaEstatica<T> implements Cola<T>{
 	
-	private Nodo<T> primero;
-	private Nodo<T> ultimo;
-
 	@Override
 	public void offer(T dato) {
-		Nodo<T> nuevo = new Nodo<>(dato, null);
-		if(primero == null)
-			primero = nuevo;
-		else
-			ultimo.setSiguiente(nuevo);
-			
-		ultimo = nuevo;
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public T poll() {
-		
-		if(primero == null)
-			return null;
-		
-		Nodo<T> aux = primero;
-		primero = primero.getSiguiente();
-		return aux.getElemento();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public T peek() {
-		
-		if(primero == null)
-			return null;
-		
-		return primero.getElemento();	
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		
-		return primero == null;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public void empty() {
-
-		while(primero != null)
-			primero = primero.getSiguiente();
-		ultimo = null;
+		// TODO Auto-generated method stub
+		
 	}
 
 }
