@@ -2,49 +2,49 @@ package tda;
 
 public class PilaDinamica<T> implements Pila<T>{
 	
-	private Nodo<T> tope = null;
+	private Nodo<T> nodo;
 
+	public PilaDinamica() {
+		// TODO Auto-generated constructor stub
+		nodo = null;
+	}
+	
 	@Override
 	public void push(T dato) {
-		
-		tope = new Nodo<T>(dato, tope);
-		
+		nodo = new Nodo<T>(dato, nodo);
 	}
 
 	@Override
 	public T pop() {
 		
-		if(tope == null)
+		if(nodo == null)
 			return null;
 		
-		T dato = tope.getElemento();
-		Nodo<T> aux = tope.getSiguiente();
-		tope = null;
-		tope = aux;
+		T dato = nodo.getElemento();
+		Nodo<T> aux = nodo.getSiguiente();
+		nodo = null;
+		nodo = aux;
 		
 		return dato;
 	}
 
 	@Override
 	public T peek() {
-		if(tope == null)
+		if(nodo == null)
 			return null;
 		
-		return tope.getElemento();
+		return nodo.getElemento();
 	}
 
 	@Override
 	public boolean isEmpty() {
-
-		return tope == null;
+		return nodo == null;
 	}
 
 	@Override
 	public void empty() {
-		
-		while(tope != null)
-			tope = tope.getSiguiente();
-		
+		while(nodo != null)
+			nodo = nodo.getSiguiente();
 	}
 
 }

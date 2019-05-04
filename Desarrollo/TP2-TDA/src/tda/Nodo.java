@@ -5,6 +5,9 @@ public class Nodo<T> {
 	private T elemento;
 	private Nodo<T> siguiente;
 	
+	/**
+	 * @param elemento Dato generico
+	 * @param siguiente Nodo del tipo generico*/
 	public Nodo(T elemento, Nodo<T> siguiente) {
 		this.elemento = elemento;
 		this.siguiente = siguiente;
