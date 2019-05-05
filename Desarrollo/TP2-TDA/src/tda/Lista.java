@@ -1,8 +1,8 @@
 package tda;
 
 public class Lista<T> {
-	private Nodo<T> primero;
-	private Nodo<T> ultimo;
+	protected Nodo<T> primero;
+	protected Nodo<T> ultimo;
 	private int tamanio;
 	
 	public Lista() {
