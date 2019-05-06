@@ -3,7 +3,7 @@ package tda;
 public class Lista<T> {
 	protected Nodo<T> primero;
 	protected Nodo<T> ultimo;
-	private int tamanio;
+	protected int tamanio;
 	
 	public Lista() {
 		this.empty();
